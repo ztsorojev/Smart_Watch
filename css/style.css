@@ -1,0 +1,167 @@
+body {
+    font-family: Arial;
+    margin: 0;
+    padding: 0;
+}
+
+.main-container {
+    display: table;
+    position: absolute;
+    height: 100%;
+    width: 100%;
+    margin: 0;
+}
+
+.inner-container {
+    position: relative;
+    display: table-cell;
+    vertical-align: middle;
+}
+
+.text-center {
+    text-align: center;
+}
+
+.vertical-center {
+    position: absolute;
+    left: 0;
+    right: 0;
+    top: 50%;
+    -webkit-transform: translateY(-50%);
+    -ms-transform: translateY(-50%);
+    transform: translateY(-50%);
+}
+
+.bg-watch {
+    height: 400px;
+    background-image: url(../lib/img/smart_watch2.png);
+    background-repeat: no-repeat;
+    background-size: contain;
+    background-position-x: center;
+}
+
+
+.wrapper {
+    margin: 20px auto;
+    width: 180px;
+}
+
+.text-info {
+    font-size: 16px;
+    margin: 10px auto;
+}
+
+
+#div_start {
+    float: right;
+}
+
+#headline {
+    text-decoration: none
+}
+
+.text-box {
+    margin-right: 12px;
+
+    position: relative;
+    font-size: 12px;
+    font-weight: bold;
+    border: 1px solid #ddd;
+    padding: 15px;
+    text-align: left;
+    min-height: 135px;
+    background-color: white;
+    border-radius: 10px;
+}
+
+.highlight {
+    background-color: #00a4ff;
+    color: white;
+}
+
+.select-language {
+    position: absolute;
+    bottom: 10px;
+    left: 5px;
+}
+
+#start_button {
+    border: 0;
+    background-color:transparent;
+    padding: 0;
+    outline: none;
+}
+
+.mic {
+    position: absolute;
+    bottom: 3px;
+    right: 0;
+}
+
+.mic > button {
+    cursor: pointer;
+}
+
+.mic-img {
+    width: 60%;
+    border-radius: 100%;
+    border: 1px solid #aeaeae;
+}
+
+.select-language > select {
+    width: 50%;
+    font-size: 12px;
+    border: 1px solid #aeaeae;
+    border-radius: 3px;
+    color: #3a3a3a;
+    outline: none;
+    cursor: pointer;
+}
+
+.select-btn {
+    position: absolute;
+    bottom: 10px;
+    left: 15px;
+}
+
+.select-btn > button {
+    font-size: 12px;
+    border: 1px solid #aeaeae;
+    border-radius: 3px;
+    color: #3a3a3a;
+    background-color: #f3f3f3;
+    outline: none;
+    cursor: pointer;
+}
+
+.interim {
+    color: gray;
+}
+
+.final {
+    color: black;
+    padding-right: 3px;
+}
+
+.button {
+    display: none;
+}
+
+#buttons {
+    margin: 10px 0;
+    position: relative;
+    top: -50px;
+}
+
+#copy {
+    margin-top: 20px;
+}
+
+#copy > div {
+    display: none;
+    margin: 0 70px;
+}
+
+a.c1 {
+    font-weight: normal;
+}

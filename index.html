@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html class="no-js consumer" lang="en">
+<head>
+
+<script>
+	(function(e, p){
+	    var m = location.href.match(/platform=(win8|win|mac|linux|cros)/);
+	    e.id = (m && m[1]) ||
+	           (p.indexOf('Windows NT 6.2') > -1 ? 'win8' : p.indexOf('Windows') > -1 ? 'win' : p.indexOf('Mac') > -1 ? 'mac' : p.indexOf('CrOS') > -1 ? 'cros' : 'linux');
+	    e.className = e.className.replace(/\bno-js\b/,'js');
+	  })(document.documentElement, window.navigator.userAgent)
+</script>
+
+<meta charset="utf-8">
+<meta content="initial-scale=1, minimum-scale=1, width=device-width" name="viewport">
+<title>
+  Speech-to-Text Entry for Wearable Devices
+</title>
+<link href="css/style.css" rel="stylesheet">
+
+</head>
+
+<body class="" id="grid">
+
+	<div class="main-container">
+		<div class="inner-container">
+
+			<!--
+			<div class="vertical-center text-center">
+			  	<img src="lib/img/smart_watch2.png" width="20%" />
+			</div>
+			-->
+
+			<div class="vertical-center text-center bg-watch">
+			  <div class="wrapper" style="margin-top: 115px;">
+			  	
+			    <div id="results" class="text-box">
+			      <span class="final" id="final_span"></span> <span class="interim" id=
+			      "interim_span"></span>
+
+			        
+			      	<div id="div_language" class="select-language" style="display: none;">
+				      <select id="select_language"></select>&nbsp;&nbsp; 
+				    </div>
+					
+
+					<div id="select" class="select-btn">
+						<button id="select_button" onclick="selectButton()">Modify</button>
+					</div>
+
+					<!--  
+						WHEN YOU CLICK ON MODIFY: text button changes to select and new button SAVE appears to validate entry and go out of edit state 
+					-->
+
+			      	<div id="div_start" class="mic">
+				      <button id="start_button" onclick="startButton(event)">
+				      	<img alt="Start" id="start_img" class="mic-img" src="./lib/img/mic.gif">
+				  	  </button>
+				    </div>
+
+			    </div>
+			    
+			  </div>
+			</div>
+
+		</div>
+	</div>
+
+	<script src="js/main.js"></script> 
+
+</body>
+</html>
