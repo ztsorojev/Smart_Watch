@@ -1,9 +1,12 @@
 # Smart Watch
-A voice-to-text entry for Smart Watches, using Google's Web Speech API. 
+A voice-to-text entry for Smart Watches, using Google's Web Speech API. <br>
 
 **Languages:** HTML, CSS, JavaScript <br/>
 **Tool:** Google's Web Speech API
 
+## Demo
+
+You can test it on: https://ztsorojev.github.io/Smart_Watch/
 
 ## How it works
 
