@@ -236,16 +236,24 @@ if (!('webkitSpeechRecognition' in window)) {
 
     //if we speak while having selected a word
     if(document.getElementById("selected_word")) {
-      new_word = event.results[event.results.length-1][0].transcript;
-      selected_word.innerHTML = linebreak(new_word); 
+      new_word = (event.results[event.results.length-1][0].transcript).substr(1);
+      selected_word.innerHTML = linebreak(new_word);  //remove 1st character of new_word because it's just empty space
+      select_button.innerHTML = "Save";
       //console.log(final_span.innerHTML);
       edit_done = true;
     } else {
-      final_transcript2 = final_transcript.replace('<span id="selected_word" class="highlight"> ' + new_word + '</span>', new_word);
+      final_transcript2 = final_transcript.replace('<span id="selected_word" class="highlight">' + new_word + '</span>', new_word);
       final_span.innerHTML = linebreak(final_transcript2);
       interim_span.innerHTML = linebreak(interim_transcript);
       edit_done = false;
       console.log(new_word);
+    }
+
+    // auto scroll down if there is a text overflow in box
+    if (final_span.offsetHeight > text_box.offsetHeight) {
+      console.log(text_box.scrollTop);
+      console.log(text_box.scrollHeight);
+      text_box.scrollTop = text_box.scrollHeight;
     }
     
     /*
@@ -268,6 +276,7 @@ function selectButton() {
   console.log(edit_done);
  // If we haven't modifed any word yet
  if(!edit_done) {
+    select_button.innerHTML = "&larr; Modify";
     counter++;
     if(counter == 1) {
       transcript = final_span.innerHTML;
@@ -289,11 +298,12 @@ function selectButton() {
       console.log(words_arr);
 
    } else { //once we traversed the whole text, exit this state.
-      //final_span.innerHTML = transcript;
-      //console.log(final_span.innerHTML);
+      final_span.innerHTML = transcript;
       counter = 0;
+      select_button.innerHTML = "Modify";
    }
  } else {
+   select_button.innerHTML = "Modify";
    words_arr[words_arr_length - counter] = new_word;
    final_span.innerHTML = words_arr.join(' ');
    //final_span.innerHTML = transcript.replace(word, new_word);
@@ -305,7 +315,7 @@ function selectButton() {
 }
 
 /*
- * This functions replace the word at the given 'index' by the variable in 'word'
+ * This functions replace the word in str at the given 'index' by the variable in 'word'
  */
 function replaceWord(str, num_words, word, index) {
 
@@ -333,6 +343,10 @@ var first_char = /\S/;
 function capitalize(s) {
   return s.replace(first_char, function(m) { return m.toUpperCase(); });
 }
+
+
+
+
 
 /*
 function createEmail() {
@@ -377,6 +391,11 @@ function startButton(event) {
     return;
   }
   final_transcript = '';
+
+  //reset selectButton()
+  transcript = '';
+  counter = 0;
+
   //recognition.lang = select_dialect.value;
   recognition.start();
   ignore_onend = false;
