@@ -1,6 +1,9 @@
 /*
- * Part of this code is taken from Google's Web Speech API
- * avaiable here: https://www.google.com/intl/en/chrome/demos/speech.html
+ * The code until line 76 was taken from Google's Web Speech API
+ * What: This block of code performs the speech-to-text transcription feature
+ * Where: https://www.google.com/intl/en/chrome/demos/speech.html
+ * Why: We reused this code to be able to use Google's Web Speech API.
+ * 
  */
 
 window.___gcfg = { lang: 'en' };
@@ -9,7 +12,6 @@ window.___gcfg = { lang: 'en' };
   po.src = 'https://apis.google.com/js/plusone.js';
   var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(po, s);
 })();
-
 
 var final_transcript = '';
 var final_transcript2 = '';
@@ -223,4 +225,23 @@ function startButton(event) {
   //showInfo('info_allow');
   //showButtons('none');
   start_timestamp = event.timeStamp;
+}
+
+
+/*
+ * Display a note "How it works"
+ */
+var acc = document.getElementsByClassName("accordion");
+var i;
+
+for (i = 0; i < acc.length; i++) {
+  acc[i].addEventListener("click", function() {
+    this.classList.toggle("active");
+    var panel = this.nextElementSibling;
+    if (panel.style.maxHeight){
+      panel.style.maxHeight = null;
+    } else {
+      panel.style.maxHeight = panel.scrollHeight + "px";
+    } 
+  });
 }
