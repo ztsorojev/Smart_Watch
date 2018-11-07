@@ -6,7 +6,7 @@ A voice-to-text entry for Smart Watches, using Google's Web Speech API. <br>
 
 ## Demo
 
-You can test it on: https://ztsorojev.github.io/Smart_Watch/
+To test the app, you have to use the **Chrome** browser and go on: https://ztsorojev.github.io/Smart_Watch/
 
 ## How it works
 
